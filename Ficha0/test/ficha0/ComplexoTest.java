@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ficha0;
 
 import org.junit.After;
@@ -16,23 +12,23 @@ import static org.junit.Assert.*;
  * @author tomas
  */
 public class ComplexoTest {
-    
+
     public ComplexoTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
-    System.out.println("Start");
+        System.out.println("Start");
     }
-    
+
     @After
     public void tearDown() {
         System.out.println("End");
@@ -44,11 +40,10 @@ public class ComplexoTest {
     @Test
     public void testSetParteReal() {
         System.out.println("setParteReal");
-        double c = 0.0;
+        double c = 5.0;
         Complexo instance = new Complexo();
         instance.setParteReal(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(5.0, instance.getParteReal(), 0);
     }
 
     /**
@@ -57,11 +52,10 @@ public class ComplexoTest {
     @Test
     public void testSetParteImaginaria() {
         System.out.println("setParteImaginaria");
-        double d = 0.0;
+        double d = 3.0;
         Complexo instance = new Complexo();
         instance.setParteImaginaria(d);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(3.0, instance.getParteImaginaria(), 0);
     }
 
     /**
@@ -74,8 +68,6 @@ public class ComplexoTest {
         double expResult = 0.0;
         double result = instance.getParteReal();
         assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -84,9 +76,10 @@ public class ComplexoTest {
     @Test
     public void testGetParteImaginaria() {
         System.out.println("getParteImaginaria");
-        assertEquals(2, new Complexo(2,3).getParteReal(), 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Complexo instance = new Complexo(2, 3);
+        double expResult = 3.0;
+        double result = instance.getParteImaginaria();
+        assertEquals(expResult, result, 0);
     }
 
     /**
@@ -95,13 +88,11 @@ public class ComplexoTest {
     @Test
     public void testSomar() {
         System.out.println("somar");
-        Complexo c1 = null;
-        Complexo c2 = null;
-        Complexo expResult = null;
+        Complexo c1 = new Complexo(1, 2);
+        Complexo c2 = new Complexo(3, 4);
+        Complexo expResult = new Complexo(4, 6);
         Complexo result = Complexo.somar(c1, c2);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -110,43 +101,39 @@ public class ComplexoTest {
     @Test
     public void testSubtrair() {
         System.out.println("subtrair");
-        Complexo c1 = null;
-        Complexo c2 = null;
-        Complexo expResult = null;
+        Complexo c1 = new Complexo(5, 3);
+        Complexo c2 = new Complexo(2, 1);
+        Complexo expResult = new Complexo(3, 2);
         Complexo result = Complexo.subtrair(c1, c2);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of multiplicar method, of class Complexo.
+     * (1+2i)*(3+4i) = (1*3 - 2*4) + (1*4 + 2*3)i = -5 + 10i
      */
     @Test
     public void testMultiplicar() {
         System.out.println("multiplicar");
-        Complexo c1 = null;
-        Complexo c2 = null;
-        Complexo expResult = null;
+        Complexo c1 = new Complexo(1, 2);
+        Complexo c2 = new Complexo(3, 4);
+        Complexo expResult = new Complexo(-5, 10);
         Complexo result = Complexo.multiplicar(c1, c2);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of dividir method, of class Complexo.
+     * (1+2i)/(3+4i) = ((1*3+2*4) + (2*3-1*4)i) / (3^2+4^2) = (11+2i)/25 = 0.44+0.08i
      */
     @Test
     public void testDividir() {
         System.out.println("dividir");
-        Complexo c1 = null;
-        Complexo c2 = null;
-        Complexo expResult = null;
+        Complexo c1 = new Complexo(1, 2);
+        Complexo c2 = new Complexo(3, 4);
+        Complexo expResult = new Complexo(0.44, 0.08);
         Complexo result = Complexo.dividir(c1, c2);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -155,12 +142,10 @@ public class ComplexoTest {
     @Test
     public void testConjugado() {
         System.out.println("conjugado");
-        Complexo c = null;
-        Complexo expResult = null;
+        Complexo c = new Complexo(2, 3);
+        Complexo expResult = new Complexo(2, -3);
         Complexo result = Complexo.conjugado(c);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -169,12 +154,11 @@ public class ComplexoTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Complexo instance = new Complexo();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Complexo positivo = new Complexo(2, 3);
+        assertEquals("2.0+3.0i", positivo.toString());
+
+        Complexo negativo = new Complexo(2, -3);
+        assertEquals("2.0-3.0i", negativo.toString());
     }
 
     /**
@@ -183,13 +167,14 @@ public class ComplexoTest {
     @Test
     public void testEquals() {
         System.out.println("equals");
-        Object o = null;
-        Complexo instance = new Complexo();
-        boolean expResult = false;
-        boolean result = instance.equals(o);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Complexo instance = new Complexo(2, 3);
+        Complexo igual = new Complexo(2, 3);
+        Complexo diferente = new Complexo(2, 4);
+
+        assertTrue(instance.equals(igual));
+        assertFalse(instance.equals(diferente));
+        assertFalse(instance.equals(null));
+        assertFalse(instance.equals("string qualquer"));
     }
 
     /**
@@ -198,12 +183,11 @@ public class ComplexoTest {
     @Test
     public void testClone() {
         System.out.println("clone");
-        Complexo instance = new Complexo();
-        Object expResult = null;
+        Complexo instance = new Complexo(2, 3);
         Object result = instance.clone();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        assertNotSame(instance, result);
+        assertEquals(instance, result);
     }
-    
+
 }
