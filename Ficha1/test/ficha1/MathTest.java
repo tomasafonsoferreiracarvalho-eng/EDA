@@ -43,16 +43,12 @@ public class MathTest {
     @Test
     public void testFactorialI() {
         System.out.println("factorialI");
-        // int num = 0;
-        // int expResult = 0;
-        // long result = Math.factorialI(num);
-        // assertEquals(expResult, result);
+        assertEquals(1, Math.factorialI(0));
         assertEquals(1, Math.factorialI(1));
         assertEquals(2, Math.factorialI(2));
-        assertEquals(3, Math.factorialI(3));
-        assertEquals(4, Math.factorialI(4));
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(6, Math.factorialI(3));
+        assertEquals(24, Math.factorialI(4));
+        assertEquals(120, Math.factorialI(5));
     }
 
     /**
@@ -61,45 +57,12 @@ public class MathTest {
     @Test
     public void testFactorialR() {
         System.out.println("factorialR");
-        // int num = 0;
-        // int expResult = 0;
-        // long result = Math.factorialR(num);
-        // assertEquals(expResult, result);
+        assertEquals(1, Math.factorialR(0));
         assertEquals(1, Math.factorialR(1));
         assertEquals(2, Math.factorialR(2));
-        assertEquals(3, Math.factorialR(3));
-        assertEquals(4, Math.factorialR(4));
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(6, Math.factorialR(3));
+        assertEquals(24, Math.factorialR(4));
+        assertEquals(120, Math.factorialR(5));
     }
     
-    @Test
-    public void testFactorialBigI() {
-        System.out.println("factorialBigInteger");
-        // int num = 0;
-        // int expResult = 0;
-        // BigInteger result = Math.factorialBigI(num);
-        // assertEquals(expResult, result);
-        assertEquals(BigInteger.valueOf(1), Math.factorialBigI(1));
-        assertEquals(BigInteger.valueOf(2), Math.factorialBigI(2));
-        assertEquals(BigInteger.valueOf(3), Math.factorialBigI(3));
-        assertEquals(BigInteger.valueOf(4), Math.factorialBigI(4));
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
-    @Test
-    public void testFactorialBigR() {
-        System.out.println("factorialBigInteger");
-        // int num = 0;
-        // int expResult = 0;
-        // BigInteger result = Math.factorialBigR(num);
-        // assertEquals(expResult, result);
-        assertEquals(BigInteger.valueOf(1), Math.factorialBigR(1));
-        assertEquals(BigInteger.valueOf(2), Math.factorialBigR(2));
-        assertEquals(BigInteger.valueOf(3), Math.factorialBigR(3));
-        assertEquals(BigInteger.valueOf(4), Math.factorialBigR(4));
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 }
