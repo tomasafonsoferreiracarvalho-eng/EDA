@@ -15,6 +15,8 @@ public class Ficha1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        for (int i = 1000; i <=1000; i++)
+            factorialI(i);
     }
     
 }
