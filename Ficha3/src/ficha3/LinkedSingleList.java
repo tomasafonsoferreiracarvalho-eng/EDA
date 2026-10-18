@@ -125,7 +125,6 @@ public class LinkedSingleList implements LinkedList{
         return count;
     }
     
-
     private class Item{
         Object data;
         Item next;
